@@ -1,0 +1,72 @@
+@import '../../style/mixins';
+@import '../../style/themes/default';
+
+@navbar-height: 45 * @hd;
+@navbarPrefixCls: gm-navbar;
+
+.@{navbarPrefixCls} {
+  display: flex;
+  align-items: center;
+  height: @navbar-height;
+  background-color: @brand-primary;
+  color: @fill-base;
+  // position: fixed;
+  // right: 0;
+  // left: 0;
+  // top: 0;
+  box-shadow: 0 2px 8px #f0f1f2;
+  // z-index: 999;
+
+  &-left,
+  &-title,
+  &-right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &-left {
+    padding-left: @h-spacing-lg;
+    font-size: @link-button-font-size;
+
+    &-icon {
+      margin-right: @h-spacing-sm;
+      display: inherit;
+      &-bar {
+        display: block;
+        width: @icon-size-xxs;
+        height: 17px;
+        color: #000;
+        .encoded-svg-background('navbar');
+      }
+    }
+  }
+
+  &-title {
+    justify-content: center;
+    font-size: 18 * @hd;
+    white-space: nowrap;
+    color: @color-text-base-inverse
+  }
+
+  &-right {
+    justify-content: flex-end;
+    font-size: @link-button-font-size;
+    margin-right: @h-spacing-lg;
+  }
+
+  &-transparent {
+      background-color: transparent;
+      color: inherit
+  }
+
+  &-light {
+    background-color: @fill-base;
+    color: @brand-primary;
+  }
+
+  &-light &-title {
+    color: @color-text-base;
+  }
+}

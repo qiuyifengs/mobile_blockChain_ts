@@ -1,0 +1,88 @@
+
+[role="tablist"] {
+  margin: 0 12px -.1em;
+  overflow: visible;
+  text-align: left
+}
+
+[role="tab"] {
+  position: relative;
+  margin: 0;
+  border: none;
+  border-radius: .2em .2em 0 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  padding: 7px 15px 8px;
+}
+
+[role="tab"]:hover::before,
+[role="tab"]:focus::before,
+[role="tab"][aria-selected="true"]::before {
+  position: absolute;
+  bottom: 100%;
+  right: -1px;
+  left: -1px;
+  border-radius: 0.2em 0.2em 0 0;
+  border-top: 3px solid #108ee9;
+  content: '';
+}
+
+[role="tab"][aria-selected="true"] {
+  border-radius: 0;
+  background: hsl(220, 43%, 99%);
+  border: 1px solid #ddd;
+  outline: 0;
+}
+
+// [role="tab"][aria-selected="true"]:not(:focus):not(:hover)::before {
+//   border-top: 5px solid hsl(218, 96%, 48%);
+// }
+
+[role="tab"][aria-selected="true"]::after {
+  position: absolute;
+  z-index: 3;
+  bottom: -1px;
+  right: 0;
+  left: 0;
+  height: .3em;
+  background: hsl(220, 43%, 99%);
+  box-shadow: none;
+  content: '';
+}
+
+[role="tab"]:hover,
+[role="tab"]:focus,
+[role="tab"]:active {
+  outline: 0;
+  border-radius: 0;
+  color: inherit;
+}
+
+[role="tab"]:hover::before,
+[role="tab"]:focus::before {
+  border-color: #108ee9;
+}
+
+[role="tabpanel"] {
+    position: relative;
+    z-index: 2;
+    // border-top: 1px solid #e1e4e8;
+    background: hsl(220, 43%, 99%);
+}
+
+[role="tabpanel"]:focus {
+  border-color: #108ee9;
+  outline: 0;
+}
+
+[role="tabpanel"]:focus::after {
+  position: absolute;
+  bottom: 0;
+  right: -1px;
+  left: -1px;
+  border-bottom: 3px solid #108ee9;
+  border-radius: 0 0 0.2em 0.2em;
+  content: '';
+}
